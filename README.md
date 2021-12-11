@@ -1,34 +1,20 @@
- Create an onboarding process using the attached mockup file.
-===============================
+Let’s say we have a slow-speed client and want to save their mobile traffic.
 
-![preview](https://github.com/tomorrowdevs-projects/user-onboarding/blob/main/preview.png "preview")
+For that purpose we decide not to show images immediately, but rather replace them with placeholders, like this:
 
-## Download here the [Figma Mockup](https://github.com/tomorrowdevs-projects/user-onboarding/blob/main/User_onboarding.fig)
+`<img src="placeholder.svg" width="128" height="128" data-src="real.jpg">`
+
+So, initially all images are placeholder.svg. When the page scrolls to the position where the user can see the image – we change src to the one in data-src, and so the image loads.
 
 Requirements:
 ----------------
-- Respect exactly the provided layout
-- Deploy the project towards Netlify (www.netlify.com) connected to your GitHub Repo
-- The form should be validated and should prompt success or error messages
-- Error messages should be provided on each field
+- When the page loads, those images that are on-screen should load immediately, prior to any scrolling.
+- Some images may be regular, without data-src. The code should not touch them.
+- Once an image is loaded, it should not reload any more when scrolled in/out.
 
-Level 1:
-----------------
-- Start the project using ReactJs
-- Implement all the components and layouts
-- Provide a validation for each field
-- Use state to store temporary values and show the steps
-- Write tests for each single validation
+P.S. If you can, make a more advanced solution that would “preload” images that are one page below/after the current position.
 
-Level 2:
-----------------
-- Use react-router to navigate between the steps
-- Find a strategy to save temporary values (eg. Context, Redux, LocalStorage)
-
-Level 3:
-----------------
-- Save results with Strapi (https://strapi.io)
-- Show a loader while calling the api and provide a feedback for success or error messages
+P.P.S. Only vertical scroll is to be handled, no horizontal scrolling.
 
 Before starting any of the tasks in this Learning Path, please READ the following rules
 ===============================
